@@ -4,4 +4,5 @@
 
 git push heroku ecopush:master
 
-git push heroku add-test-service:master
+
+heroku git:remote -a ecopush-mq
