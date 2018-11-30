@@ -1,0 +1,17 @@
+.DS_Store
+*.prefs
+.metadata
+.project
+.classpath
+*.iml
+.idea/
+target/
+*/logs/*
+logs/*
+*/.settings/*
+.jde_tree_state
+.#webclasspath
+.tomcatplugin
+*.csv
+*.png
+*.swp

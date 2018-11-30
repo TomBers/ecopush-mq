@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+a2e2887ff8498551914efc373c6b596df6996bff refs/remotes/origin/ecopush
+86dcc8856fb35ca41f48a08da6de75b800e200df refs/remotes/origin/ecopush-verbatim
+084582bd39c3f6b6f8ee6976da996e694ee40f25 refs/remotes/origin/master
