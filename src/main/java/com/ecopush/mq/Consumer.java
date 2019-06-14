@@ -15,24 +15,17 @@ public class Consumer {
 		String accessKey = System.getenv("ECOPUSH_MQ_ACCESS_KEY");
     String decryptionKey = System.getenv("ECOPUSH_MQ_DECRYPTION_KEY");
     String postUrl = System.getenv("ECOPUSH_ENDPOINT_URL");
-    String postTestUrl = System.getenv("ECOPUSH_ENDPOINT_TEST_URL");
 
     EcopushService ecopushService = new EcopushServiceImpl(postUrl);
-    EcopushService ecopushTestService = new EcopushServiceImpl(postTestUrl);
 
 
 		MqConsumer mqConsumer = MqConsumer.build().serviceUrl(url).accessId(accessId).accessKey(accessKey)
 				.maxRedeliverCount(3).messageListener(message -> {
           try {
             String data = new String(message.getData());
-            System.out.println("Message received:" + data + ",seq="
-                + message.getSequenceId() + ",time=" + message.getPublishTime() + ",consumed time="
-                + System.currentTimeMillis() + ",partition="
-                + ((TopicMessageIdImpl) message.getMessageId()).getTopicPartitionName());
 
             MessageWrapper messageWrapper = Consumer.deserialise(data);
             String innerMessage = messageWrapper.getMessage(decryptionKey);
-            System.out.println("Inner message: " + innerMessage);
             ecopushService.post(innerMessage);
             ecopushTestService.post(innerMessage);
           } catch (Exception e) {
