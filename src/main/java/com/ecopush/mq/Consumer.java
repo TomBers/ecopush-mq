@@ -27,7 +27,6 @@ public class Consumer {
             MessageWrapper messageWrapper = Consumer.deserialise(data);
             String innerMessage = messageWrapper.getMessage(decryptionKey);
             ecopushService.post(innerMessage);
-            ecopushTestService.post(innerMessage);
           } catch (Exception e) {
             System.out.println("Error occured while processing message: " + e.getMessage());
             e.printStackTrace();
