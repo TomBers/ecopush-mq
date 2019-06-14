@@ -1,10 +1,12 @@
 package com.ecopush.mq;
 
+import com.ecopush.mq.EcopushServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class MessageHandlerTask implements Runnable {
 
@@ -24,9 +26,7 @@ public class MessageHandlerTask implements Runnable {
         String url = System.getenv("ECOPUSH_MQ_URL");
         String accessId = System.getenv("ECOPUSH_MQ_ACCESS_ID");
         String accessKey = System.getenv("ECOPUSH_MQ_ACCESS_KEY");
-
         String postUrl = System.getenv("ECOPUSH_ENDPOINT_URL");
-        String postTestUrl = System.getenv("ECOPUSH_ENDPOINT_TEST_URL");
 
         this.ecopushService = new EcopushServiceImpl(postUrl);
 

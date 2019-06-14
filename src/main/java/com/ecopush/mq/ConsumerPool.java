@@ -7,7 +7,7 @@ import org.apache.pulsar.client.api.Consumer;
 
 import java.util.function.BiConsumer;
 
-public class ConsumerExample2 {
+public class ConsumerPool {
     public static void main(String[] args) throws Exception {
         PulsarConsumerPoolFactory.getConsumerPool().forEach(new BiConsumer<Integer, Consumer>() {
             @Override
