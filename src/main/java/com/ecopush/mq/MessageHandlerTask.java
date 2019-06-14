@@ -1,11 +1,8 @@
 package com.ecopush.mq;
 
-import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tuya.open.sdk.example.MessageVO;
 import org.apache.pulsar.client.api.Consumer;
 import org.apache.pulsar.client.api.Message;
-import org.apache.pulsar.client.impl.TopicMessageIdImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
